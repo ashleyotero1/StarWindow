@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { View, Animated, Dimensions } from 'react-native';
+import { Palette } from '@/constants/tokens';
 
 const getScreen = () => Dimensions.get('window');
 
@@ -68,7 +69,7 @@ export function ShootingStar({ delay }: { delay: number }) {
         <View style={{
           width: 60,
           height: 2,
-          backgroundColor: '#00d4ff',
+          backgroundColor: Palette.accent,
           opacity: 0.6,
           borderRadius: 2,
         }} />
@@ -76,8 +77,8 @@ export function ShootingStar({ delay }: { delay: number }) {
           width: 7,
           height: 7,
           borderRadius: 7,
-          backgroundColor: '#ffffff',
-          shadowColor: '#00d4ff',
+          backgroundColor: Palette.white,
+          shadowColor: Palette.accent,
           shadowOffset: { width: 0, height: 0 },
           shadowOpacity: 1,
           shadowRadius: 8,

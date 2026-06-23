@@ -13,6 +13,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Audio } from 'expo-av';
 import { ShootingStar } from '@/components/shooting-star';
+import { Palette, Radius } from '@/constants/tokens';
 
 const getScreen = () => Dimensions.get('window');
 
@@ -78,11 +79,11 @@ export default function LoginScreen() {
 
   const signInBorderColor = signInGlow.interpolate({
     inputRange: [0, 1],
-    outputRange: ['#00d4ff', '#ffffff'],
+    outputRange: [Palette.accent, Palette.white],
   });
   const newUserBorderColor = newUserGlow.interpolate({
     inputRange: [0, 1],
-    outputRange: ['#0a1a2e', '#00d4ff'],
+    outputRange: [Palette.accentMuted, Palette.accent],
   });
 
   return (
@@ -97,7 +98,7 @@ export default function LoginScreen() {
             width: star.size,
             height: star.size,
             borderRadius: star.size,
-            backgroundColor: '#ffffff',
+            backgroundColor: Palette.white,
             opacity: star.opacity,
           }} />
         ))}
@@ -193,7 +194,7 @@ export default function LoginScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000008',
+    backgroundColor: Palette.background,
     overflow: 'hidden',
   },
   starField: {
@@ -215,37 +216,37 @@ const styles = StyleSheet.create({
   },
   appName: {
     fontWeight: '900',
-    color: '#ffffff',
+    color: Palette.white,
     letterSpacing: 4,
     marginBottom: 4,
-    textShadowColor: '#00d4ff',
+    textShadowColor: Palette.accent,
     textShadowOffset: { width: 0, height: 0 },
     textShadowRadius: 14,
   },
   tagline: {
     fontSize: 10,
-    color: '#334455',
+    color: Palette.tagline,
     marginBottom: 24,
     letterSpacing: 1.5,
     textAlign: 'center',
   },
   card: {
     width: '100%',
-    backgroundColor: '#01030a',
-    borderRadius: 20,
+    backgroundColor: Palette.cardBackground,
+    borderRadius: Radius.lg,
     borderWidth: 1,
-    borderColor: '#0a1828',
-    shadowColor: '#00d4ff',
+    borderColor: Palette.cardBorder,
+    shadowColor: Palette.accent,
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.1,
     shadowRadius: 24,
   },
   input: {
-    backgroundColor: '#020810',
+    backgroundColor: Palette.inputBackground,
     borderWidth: 1,
-    borderColor: '#0d1e30',
-    borderRadius: 10,
-    color: '#aabbcc',
+    borderColor: Palette.inputBorder,
+    borderRadius: Radius.sm,
+    color: Palette.inputText,
     fontSize: 13,
     marginBottom: 10,
   },
@@ -254,24 +255,24 @@ const styles = StyleSheet.create({
     marginBottom: 14,
   },
   forgot: {
-    color: '#00d4ff',
+    color: Palette.accent,
     fontSize: 10,
     opacity: 0.6,
   },
   signInButton: {
-    backgroundColor: '#00111f',
-    borderRadius: 10,
+    backgroundColor: Palette.signInBackground,
+    borderRadius: Radius.sm,
     padding: 12,
     alignItems: 'center',
     marginBottom: 12,
     borderWidth: 1,
-    shadowColor: '#00d4ff',
+    shadowColor: Palette.accent,
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.5,
     shadowRadius: 12,
   },
   signInText: {
-    color: '#00d4ff',
+    color: Palette.accent,
     fontSize: 13,
     fontWeight: 'bold',
     letterSpacing: 4,
@@ -284,27 +285,27 @@ const styles = StyleSheet.create({
   dividerLine: {
     flex: 1,
     height: 1,
-    backgroundColor: '#080f18',
+    backgroundColor: Palette.divider,
   },
   dividerText: {
-    color: '#1a2a3a',
+    color: Palette.dividerText,
     marginHorizontal: 10,
     fontSize: 10,
   },
   newUserButton: {
-    borderRadius: 10,
+    borderRadius: Radius.sm,
     padding: 12,
     alignItems: 'center',
     borderWidth: 1,
     backgroundColor: 'transparent',
   },
   newUserText: {
-    color: '#336688',
+    color: Palette.newUserText,
     fontSize: 12,
     letterSpacing: 1,
   },
   footer: {
-    color: '#080f18',
+    color: Palette.divider,
     fontSize: 14,
     marginTop: 20,
     letterSpacing: 8,
